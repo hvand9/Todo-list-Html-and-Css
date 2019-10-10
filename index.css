@@ -1,0 +1,156 @@
+/*This part is the styling og the HTML */ 
+@charset "utf-8";
+:root {
+	--primary: rgb(140, 175, 171);
+	--dark: #F5F5F5;
+	--light: rgb(153, 115, 115);
+	--black: rgb(219, 232, 233);
+	--shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+html {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	color: var(--dark);
+}
+
+body {
+	background: #F5F5F5;
+	margin: 30px 50px;
+	line-height: 1.4;
+}
+
+.btn {
+	background: var(--dark);
+	color: var(--light);
+	padding: 0.6rem 1.3rem;
+	text-decoration: none;
+	border: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+/*Custom showcase created*/
+
+.showcase {
+	grid-area: showcase;
+	min-height: 500px;
+	background: url(smartmockups_k1jkbzp2.jpg);
+	background-size: cover;
+	background-position: center;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: center;
+	box-shadow: var(--shadow);
+}
+
+.showcase h1 {
+	font-size: 4rem;
+	margin-bottom: 0;
+	color: var(--black);
+}
+
+.showcase p {
+	font-size: 1.3rem;
+	margin-top: 0;
+	color: var(--black);
+}
+
+/*boxes and text under the showcase is being defined and created*/
+
+.boxes {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	color:#000000;
+}
+
+.box {
+	background: var(--primary);
+	text-align: center;
+	padding: 1.5rem 2rem;
+	box-shadow: var(--shadow);
+	color:#000000;
+	
+}
+
+.info {
+	background: var(--primary);
+	box-shadow: var(--shadow);
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 3rem;
+	color:#000000
+}
+
+
+/*Media Enquiry(Responsive)*/
+
+@media (max-width: 700px) {
+	.top-container {
+		grid-template-areas:
+			'showcase showcase'
+			'top-box-a top-box-b';
+	}
+	
+	.showcase h1 {
+		font-size: 2.5rem;
+	}
+	
+	.main-nav ul {
+		grid-template-columns: 1fr;
+	}
+	
+	.info {
+		grid-template-columns: 1fr;
+	}
+	
+	.info .btn {
+		display: block;
+		text-align: center;
+		margin: auto;
+	}
+}
+.icon-bar {
+    width: 100%;
+    background-color: #F5F5F5;
+    overflow: auto;
+}
+
+
+
+/*Custom slider at the bottom of the*/
+
+#slider {
+	overflow: hidden;
+}
+
+@keyframes slider {
+	0% { left: 0; }
+	30% { left: 0; }
+	33% { left: -100%; }
+	63% { left: -100%; }
+	66% { left: -200%; }
+	95% { left: -200%; }
+	100% { left: 0; }
+}
+#slider figure {
+	width:300%;
+	position: relative;
+	animation: 9s slider infinite;
+}
+
+#slider figure:hover {
+	/*animation-play-state: paused; enable for pause on hover*/
+}
+#slider figure img {
+	width: 33.333333333%;
+	height : 100%;
+	float: left;
+}
+
